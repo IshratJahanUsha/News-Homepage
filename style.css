@@ -1,0 +1,349 @@
+:root {
+    --clr-Soft-orange: hsl(35, 77%, 62%);
+    --clr-Soft-red: hsl(5, 85%, 63%);
+    --clr-Off-white: hsl(36, 100%, 99%);
+
+    --clr-Grayish-blue: hsl(233, 8%, 79%);
+    --clr-Dark-grayish-blue: hsl(236, 13%, 42%);
+    --clr-Very-dark-blue: hsl(240, 100%, 5%);
+
+    --ff-primary: 'Inter', sans-serif;
+
+    --fw-regular: 400;
+    --fw-bold: 700;
+    --fw-extra-bold: 800;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--ff-primary);
+    margin: 1.5rem 1rem;
+    padding: 0;
+    border: none;
+    outline: none;
+    background-color: var(--clr-Off-white);
+    transition: background-color 0.4s ease;
+}
+
+body.active {
+    background-color: var(--clr-Grayish-blue);
+}
+
+
+/* navbar section starts */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    width: 2.5rem;
+}
+
+header .desktop-nav {
+    display: none;
+}
+
+@keyframes setwidth {
+
+    0%   {width: 0%;}
+    100% {width: 80%;}
+  
+}
+
+header .mobail-nav-sec {
+    position: absolute;
+    background-color: aliceblue;
+    padding: 1.5rem 1rem 0 2rem;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 0%;
+    display: none;
+    animation: setwidth .5s ease-in-out 0s;
+}
+
+/*  */
+
+.mobail-nav-sec.active {
+    width: 80%;
+    display: block;
+}
+
+.mobail-nav-sec .close-btn {
+    all: unset;
+    display: block;
+    width: 100%;
+    text-align: right;
+    cursor: pointer;
+}
+
+.mobail-nav-sec .close-btn img {
+    margin-bottom: 4.5rem;
+}
+
+.mobail-nav ul,
+.desktop-nav ul {
+    all: unset;
+}
+
+.mobail-nav ul li {
+    list-style: none;
+    text-decoration: none;
+    line-height: 2.8rem;
+}
+
+.mobail-nav ul li a {
+    text-decoration: none;
+    color: var(--clr-Very-dark-blue);
+    font-size: 1.2rem;
+}
+
+.mobail-nav ul li a:hover,
+.desktop-nav ul li a:hover {
+    color: var(--clr-Soft-orange);
+}
+
+header .menu-btn {
+    all: unset;
+}
+
+header .menu-btn img {
+    cursor: pointer;
+}
+
+/* navbar section end */
+
+/* bright news css */
+
+.bright_container {
+    margin: 1.5rem 0;
+}
+
+.bright_future_news-container .bright_future-img picture img {
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.bright_future_news-container .bright_news-title h1 {
+    font-size: 2.5rem;
+    font-weight: var(--fw-extra-bold);
+    line-height: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.bright_future_news-container .bright_news-content .news_detail {
+    color: var(--clr-Dark-grayish-blue);
+    line-height: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.read-more-btn {
+    all: unset;
+    background-color: var(--clr-Soft-red);
+    color: white;
+    padding: 1rem 2rem;
+    margin-bottom: 3rem;
+    letter-spacing: 0.3rem;
+    cursor: pointer;
+}
+
+
+/* new news part */
+
+.new_news_container {
+    background-color: var(--clr-Very-dark-blue);
+    color: white;
+    padding: 1rem;
+}
+
+.new_news_container .new_news_container-title {
+    font-size: 2rem;
+    color: var(--clr-Soft-orange);
+}
+
+.new_news {
+    margin-top: 2rem;
+    border-bottom: 1px solid rgba(209, 209, 209, 0.5);
+}
+
+.new_news:nth-child(3) {
+    border-bottom: none;
+    margin-bottom: 0px;
+}
+
+.new_news .news_title {
+    margin-bottom: 0.8rem;
+}
+
+.new_news_detail {
+    line-height: 1.8rem;
+    color: var(--clr-Grayish-blue);
+    margin-bottom: 1rem;
+}
+
+.new_news:nth-child(3) .new_news_detail {
+    margin-bottom: .5rem;
+}
+
+
+/* top news css */
+
+.top_news_section {
+    margin: 3.5rem 0;
+}
+
+.top_news_container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.top_news_img_container img {
+    max-width: 7.5rem;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+.top_news .number {
+    font-size: 1.5rem;
+    color: var(--clr-Grayish-blue);
+    font-weight: var(--fw-bold);
+}
+
+.top_news .top_news_title {
+    font-size: 1.2rem;
+    font-weight: var(--fw-bold);
+    margin: 0.5rem 0;
+}
+
+.top_news .top_news_detail {
+    font-size: 1rem;
+    line-height: 1.8rem;
+    color: var(--clr-Dark-grayish-blue);
+}
+
+
+
+/* responsive code */
+
+@media (min-width:768px) {
+
+    .mobail-nav-sec F,
+    .menu-btn img {
+        display: none;
+    }
+
+    header,
+    .bright_container,
+    .top_news_section {
+        padding: 0 5%;
+    }
+
+    header .desktop-nav {
+        display: block;
+        margin-left: auto;
+    }
+
+    .desktop-nav ul li {
+        list-style: none;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .desktop-nav ul li a {
+        text-decoration: none;
+        color: var(--clr-Dark-grayish-blue);
+        font-size: 1.2rem;
+        margin-left: 1rem;
+    }
+
+    .top_news_section {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .top_news_container {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .top_news .number {
+        font-size: 1.5rem;
+    }
+
+    .top_news .top_news_title {
+        font-size: 1rem;
+        margin: 0.3rem 0;
+    }
+
+    .top_news .top_news_detail {
+        font-size: 0.8rem;
+        line-height: 1.2rem;
+        color: var(--clr-Dark-grayish-blue);
+    }
+}
+
+
+@media (min-width:976px) {
+
+    header,
+    .bright_container,
+    .top_news_section {
+        padding: 0 7%;
+    }
+
+    .bright_container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-gap: 1.5rem;
+    }
+
+    .bright_future_news-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+    .bright_future-img {
+        grid-column: 1 / -1;
+    }
+
+    .bright_news-title {
+        margin: auto;
+        padding-right: 3rem;
+        font-size: 2rem;
+
+    }
+
+    .bright_future_news-container .bright_news-title h1 {
+        font-size: 3.5rem;
+        line-height: 3.5rem;
+    }
+
+    .read-more-btn {
+        margin-bottom: 0;
+        margin-top: .5rem;
+    }
+}
